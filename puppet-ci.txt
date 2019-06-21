@@ -1,0 +1,49 @@
+#
+# Reference: https://puppet.com/blog/video-continuous-integration-for-your-puppet-code
+# Testing via rspec-puppet???
+#
+# Module Testing
+# Stage 1 - All the things `pdk validate` does
+- puppet parser validate
+- erb syntax
+- puppet lint
+- other?
+
+# Stage 2 - All the things `pdk test unit` does
+- run unit tests
+- other?
+
+# Stage 3 - Catalog test
+- compile a catalog from environment codebase
+-- control-repo + all referenced modules
+
+# Stage 4 - Canary node test
+- deploy a canary test node (pupperware?)
+- apply catalog to canary test node
+
+# Stage 5 - Integration test (validation of changes)
+- verify result of system changes is expected
+
+# Stage 6 - Nightly test builds
+- scheduled test builds
+
+# Control Repository Tests
+# Stage 1 - ???
+- puppet parser validate
+- erb syntax
+- puppet lint
+- other?
+
+# Stage 2 - Catalog test
+- compile a catalog using all code within the entire environment
+-- control-repo + all referenced modules
+
+# Stage 3 - Dynamic test (test nodes)
+- deploy a test node (pupperware?)
+- apply catalog to test node
+
+# Stage 4 - Integration test (validation of changes)
+- verify result of system changes is expected
+
+# Stage 5 - Nightly test builds
+- scheduled test builds
